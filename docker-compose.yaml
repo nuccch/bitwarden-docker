@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  bitwarden:
+    container_name: "bitwarden"
+    image: bitwardenrs/server
+    environment:
+      ADMIN_TOKEN: 'SOME_TOKEN'
+      WEBSOCKET_ENABLED: 'true'
+      SIGNUPS_ALLOWED: 'true'
+    ports:
+      - "3012:3012"
+      - "80:80"
+    volumes:
+      - /bitwardenrs/data:/data
